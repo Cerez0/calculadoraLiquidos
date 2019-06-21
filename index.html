@@ -100,23 +100,39 @@
 
                 <div id="quieres-nicotina" class="pregunta">
                     <h2>¿Quieres nicotina?</h2>
+                    <p></p>
+        
+                    <div class="contenedor-botones-preguntas">
+                        <a class="boton" href="#cantidad-nicotina">Si, Quiero nicotina</a>
+                        <a class="boton" href="#porcentaje-pg">No, Quiero nicotina</a>
+                    </div>    
+                </div><!--Pregunta-->
+
+                <div id="cantidad-nicotina" class="pregunta">
+                        <h2>¿Cuanta nicotina quieres en tu base?(Mg)</h2>
+                
+                        <form>
+                            <input id="cant-nicotina" type="number" min="0" required>
+            
+                            <div class="contenedor-boton-continuar">
+                                <a id="btn-cant-nicotina" class="boton" href="#concentracion-nicotina">Continuar</a>
+                            </div> 
+                        </form>                             
+                    </div><!--Pregunta-->
+
+                <div id="concentracion-nicotina" class="pregunta">
+                    <h2>¿Que concentracion de nicotina tienen tus NicoKits?</h2>
             
                     <form>
-
-                        <div class="contenedor-si-no">
-
-                            <div class="contenedor-si">
-                                <input id="nicotina-si" name="nicotina" type="radio" value="si">SI
-                            </div>
-
-                            <div class="contenedor-no">
-                                <input id="nicotina-no" name="nicotina" type="radio" value="no" checked>NO
-                            </div>
-
-                        </div>
+                        <select class="caja-conNicoKitds" id="nico-lista" name="nicoList">
+                            <option value="0">Seleciona una cantidad</option>
+                            <option value="20">20mg/ml</option>
+                            <option value="18">18mg/ml</option>
+                            <option value="12">12mg/ml</option>
+                          </select>
         
                         <div class="contenedor-boton-continuar">
-                            <a id="btn-nicotina" class="boton" href="#porcentaje-pg">Continuar</a>
+                            <a id="btn-cant-base" class="boton" href="#porcentaje-pg">Continuar</a>
                         </div> 
                     </form>                             
                 </div><!--Pregunta-->

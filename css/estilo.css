@@ -223,69 +223,32 @@ div.pregunta p {
 
 }
 
-/* Quieres Nicotina? */
+/* Concentracion NicoKits */
 
-div.contenedor-si-no {
+.caja-conNicoKitds {
 
-    
-    display: flex;
-    width: 200px;
-    margin: 0 auto;
-    
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #207cca;
+    color: white;
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 10px; 
+    margin-bottom: 20px;
+}
+
+.caja-conNicoKitds option {
+
+    font-size: 0.6em;
 
 }
 
-div.contenedor-si {
-
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
-    margin: 0 auto;
+@media (min-width: 900px) {
     
+    .caja-conNicoKitds option {
+
+        font-size: 1em;
     
-}
-
-div.contenedor-no {
-
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
-    margin: 0 auto;
-    
-    
-}
-
-#nicotina-si {
-
-    margin: 10px;
-    width: 30px;
-    color: #FF8000;
-    
-
-}
-
-#nicotina-no {
-
-    margin: 10px;
-    width: 30px;
-    background-color: #FF8000;
-}
-
-div.contenedor-si {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    
-}
-
-div.contenedor-no {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+    }
 }
 
 

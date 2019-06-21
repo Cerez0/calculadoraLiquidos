@@ -4,13 +4,18 @@
     document.addEventListener('DOMContentLoaded', function(){
 
 
-        // Datos
+        // Aroma
 
         var cantidadAroma = document.getElementById('cantidad-aroma');
         var porcentajeAroma = document.getElementById('porciento-aroma');
         var resultado = document.getElementById('pResultado');
         var resultado2 = document.getElementById('pResultado2');
 
+        //Nicotina
+        var concentracionNicotina = document.getElementById('nico-lista');
+        var cantidadNicotina = document.getElementById('cant-nicotina');        
+
+        //  Base
         var cantBase = document.getElementById('cant-base');
         var porPg = document.getElementById('por-pg-gv');
         var pg = document.getElementById('pg');
@@ -23,12 +28,15 @@
         var btnResultadoLiquido = document.getElementById('btnPorAroma');
         var btnResultadoBase = document.getElementById('btn-por-pg');
         var bntPorcentajes = document.getElementById('por-pg-gv');
+        var btnRepetir = document.getElementById('btn-reiniciar');
         
         
         btnResultadoLiquido.addEventListener('click', resultadoLiquido);
         btnResultadoBase.addEventListener('click', resultadoBase);
         bntPorcentajes.addEventListener('mousemove', porcentajes);
         bntPorcentajes.addEventListener('touchmove', porcentajes);
+        btnRepetir.addEventListener('click', repetir);
+        
 
         pg.innerHTML = bntPorcentajes.value + '%';
         gv.innerHTML = (100 - bntPorcentajes.value) + '%';
@@ -62,26 +70,46 @@
 
         function resultadoBase(){
 
+            var conNicotina  = parseInt(concentracionNicotina.value);
+            var cantNicotina = cantidadNicotina.value;
             let resultCantBase = cantBase.value;
             let resultPorPg = porPg.value;
             let resultPorGv = 100 - resultPorPg;
 
             let totalPg = (resultPorPg * resultCantBase)/100;
             let totalGv = (resultCantBase - totalPg);
-
-            resultado.innerHTML = '';
-            resultado2.innerHTML = '';
-            resultado.innerHTML += 'Si quieres fabricar ' + resultCantBase +'ml de Base al ' + resultPorPg + '% de PG y ' + resultPorGv + '% de GV.';
-            resultado2.innerHTML += 'Tienes que echar ' + totalPg + 'ml de PG y ' + totalGv + 'ml de GV.'
-
             
+
+            if (conNicotina == 0){
+
+                let totalPg = (resultPorPg * resultCantBase)/100;
+                let totalGv = (resultCantBase - totalPg);
+
+                resultado.innerHTML = '';
+                resultado2.innerHTML = '';
+                resultado.innerHTML += 'Si quieres fabricar ' + resultCantBase +'ml de Base al ' + resultPorPg + '% de PG y ' + resultPorGv + '% de GV.';
+                resultado2.innerHTML += 'Tienes que echar ' + totalPg + 'ml de PG y ' + totalGv + 'ml de GV.'
+                
+            }else{
+
+                let totalNicotina = (cantNicotina * resultCantBase/conNicotina);
+                resultado.innerHTML = '';
+                resultado2.innerHTML = '';
+                resultado.innerHTML += 'Si quieres fabricar ' + resultCantBase +'ml de Base con '+ cantNicotina + 'mg de nicotina al ' + resultPorPg + '% de PG y ' + resultPorGv + '% de GV.';
+                resultado2.innerHTML += 'Tienes que echar ' + totalPg + 'ml de PG y ' + totalGv + 'ml de GV y ' + totalNicotina + 'ml de nicotina ' + conNicotina;
+
+
+                console.log(totalNicotina+'ml');
+            }
         }
+
+        
 
         function porcentajes(){
             mostrarPorcentajes();
         }
 
-         function mostrarPorcentajes(){
+        function mostrarPorcentajes(){
 
 
             let resultCantBase = cantBase.value;
@@ -96,9 +124,17 @@
             
             console.log(resultCantBase + ' ' + resultPorPg + ' ' + resultPorGv );
 
-         }
+        }
 
+        function repetir(){
 
+            concentracionNicotina.value = 0;
+            cantBase.value = 0;
+            porcentajeAroma.value = 0;
+            cantidadAroma.value = 0;
+            porPg.value = 50;
+
+        }
     });
 
 })();
@@ -113,7 +149,6 @@ $(function(){
     $('.contenedor-preguntas div:first').show();
     $('.contenedor-botones-preguntas a').on('click', btnSiguiente);
     $('.contenedor-boton-continuar a').on('click', btnContinuar);
-    $('#btn-nicotina').on('click', btnNicotina);
 
     function btnSiguiente(){
 
@@ -138,15 +173,6 @@ $(function(){
     
     }
 
-    function btnNicotina(){
-
-        var sig = $(this).attr('href');
-        $('.pregunta').fadeOut();
-        $(sig).fadeIn();
-        console.log(sig);
-        return false;
-
-    }
 
 
 });
