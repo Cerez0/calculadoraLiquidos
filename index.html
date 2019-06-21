@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Calculadora E-Liquidos</title>
+</head>
+<body>
+    
+        <header>
+            <h1>Calculadora E-Liquidos</h1>
+        </header>
+
+        <main>
+            <div class="contenedor-preguntas">
+
+                <div class="pregunta">
+                    <h2>Solo para mayores de 18 años</h2>
+
+                    <div class="contenedor-botones-preguntas">
+                        <a id="btn-noEdad" class="boton" href="http://www.cerezostudio.es">Tengo menos de 18</a>
+                        <a id="btn-siEdad" class="boton" href="#seleccion">Tengo mas de 18</a>
+                    </div>    
+                </div><!--Pregunta-->
+
+                <div id="seleccion" class="pregunta">
+                    <h2>¿Que quieres fabricar Base o E-Liquido?</h2>
+
+                    <div class="contenedor-botones-preguntas">
+                        <a id="btn-noEdad" class="boton" href="#cantidad-base">Fabricar Base</a>
+                        <a id="btn-siEdad" class="boton" href="#base-fabricada">Fabricar E-Liquido</a>
+                    </div>    
+                </div><!--Pregunta-->
+
+                <div id="base-fabricada" class="pregunta">
+                    <h2>¿Tienes Base ya fabricada?</h2>
+                    <p></p>
+        
+                    <div class="contenedor-botones-preguntas">
+                        <a class="boton" href="#cant-aroma">Si, Tengo base</a>
+                        <a class="boton" href="#cantidad-base">No, Tengo base</a>
+                    </div>    
+                </div><!--Pregunta-->
+
+                <div id="cant-aroma" class="pregunta">
+                    <h2>¿Cuantos ml de aroma tienes?</h2>
+                    
+
+                    <form>
+                            <input id="cantidad-aroma" type="number" required>
+                                
+                            <div class="contenedor-boton-continuar">
+                                <a id="btnCantAroma" class="boton" href="#por-aroma">Continuar</a>
+                            </div> 
+                    </form>
+            
+                </div><!--Pregunta-->
+
+                <div id="por-aroma" class="pregunta">
+                    <h2>¿A que porcentaje quieres hacer el E-Liquido?</h2>
+                    
+        
+                    <form>
+                        <input id="porciento-aroma" type="number" required>
+
+                        <div class="contenedor-boton-continuar">
+                            <a id="btnPorAroma" class="boton" href="#resultado">Continuar</a>
+                        </div> 
+                    </form>                             
+                </div><!--Pregunta-->
+
+                <div id="resultado" class="pregunta">
+                    <h2>Resultado</h2>
+                    <div id="texto-resultado">
+                        <p id="pResultado"></p>
+                        <p id="pResultado2"></p>
+                    </div>
+
+                    <div class="contenedor-boton-continuar">
+                        <a id="btn-reiniciar" class="boton" href="#seleccion">Repetir</a>
+                    </div> 
+                                
+                </div><!--Pregunta-->
+
+
+                <div id="cantidad-base" class="pregunta">
+                    <h2>¿Cuantos ml de base quieres fabricar?</h2>
+            
+                    <form>
+                        <input id="cant-base" type="number" min="0" required>
+        
+                        <div class="contenedor-boton-continuar">
+                            <a id="btn-cant-base" class="boton" href="#quieres-nicotina">Continuar</a>
+                        </div> 
+                    </form>                             
+                </div><!--Pregunta-->
+
+                <div id="quieres-nicotina" class="pregunta">
+                    <h2>¿Quieres nicotina?</h2>
+            
+                    <form>
+
+                        <div class="contenedor-si-no">
+
+                            <div class="contenedor-si">
+                                <input id="nicotina-si" name="nicotina" type="radio" value="si">SI
+                            </div>
+
+                            <div class="contenedor-no">
+                                <input id="nicotina-no" name="nicotina" type="radio" value="no" checked>NO
+                            </div>
+
+                        </div>
+        
+                        <div class="contenedor-boton-continuar">
+                            <a id="btn-nicotina" class="boton" href="#porcentaje-pg">Continuar</a>
+                        </div> 
+                    </form>                             
+                </div><!--Pregunta-->
+
+                <div id="porcentaje-pg" class="pregunta">
+                    <div class="texto-pg-gv">
+                        <h2>Elige el porcentaje de Propilenglicol (PG) y Glicerina Vegetal (GV)</h2>
+                    </div>
+            
+                    <form>
+                        <div class="num-porcentaje">
+                            <p>PG:<span id="pg"></span></p>
+                        
+                            <p>GV:</span><span id="gv"></span></p>
+                        </div>
+                        <p><span class="text-pg">(PG)</span><input id="por-pg-gv" type="range" value="50"><span class="text-gv">(GV)</span></p>
+        
+                        <div class="contenedor-boton-continuar">
+                            <a id="btn-por-pg" class="boton" href="#resultado">Continuar</a>
+                        </div> 
+                    </form>                             
+                </div><!--Pregunta-->
+
+            </div><!--contenedor preguntas-->
+        </main>
+    
+    
+        <footer>
+            <div class="copy">
+                <p>JM Cerezo &reg;</p>
+            </div>  
+        </footer>
+    
+
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
