@@ -58,8 +58,8 @@
 
             resultado.innerHTML = '';
             resultado2.innerHTML = '';
-            resultado.innerHTML += 'Con ' + resultCantAroma + 'ml de Aroma al ' + resultPorAroma + '%' + ', puedes hacer un maximo de ' + totalLiquido.toFixed() + 'ml de E-Liquid.'; 
-            resultado2.innerHTML += 'Si quieres fabricar ' + totalLiquido.toFixed() + 'ml de E-Liquid tienes que mezclar ' + totalLiquido2.toFixed() + 'ml de Aroma y ' +  totalLiquido3.toFixed(0) + 'ml de Base.';
+            resultado.innerHTML += 'Con ' + resultCantAroma + 'ml de Aroma al ' + resultPorAroma + '%' + ', puedes hacer un maximo de ' + totalLiquido.toFixed() + 'ml de E-Liquido.'; 
+            resultado2.innerHTML += 'Si quieres fabricar ' + totalLiquido.toFixed() + 'ml de E-Liquido tienes que mezclar ' + totalLiquido2.toFixed() + 'ml de Aroma y ' +  totalLiquido3.toFixed(0) + 'ml de Base.';
                 
             // console.log('Porcentaje:' + resultPorAroma);
             // console.log('Cantidad:' + resultCantAroma);
@@ -93,6 +93,7 @@
             }else{
 
                 let totalNicotina = (cantNicotina * resultCantBase/conNicotina);
+
                 resultado.innerHTML = '';
                 resultado2.innerHTML = '';
                 resultado.innerHTML += 'Si quieres fabricar ' + resultCantBase +'ml de Base con '+ cantNicotina + 'mg de nicotina al ' + resultPorPg + '% de PG y ' + resultPorGv + '% de GV.';
