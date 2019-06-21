@@ -88,7 +88,7 @@
                 resultado.innerHTML = '';
                 resultado2.innerHTML = '';
                 resultado.innerHTML += 'Si quieres fabricar ' + resultCantBase +'ml de Base al ' + resultPorPg + '% de PG y ' + resultPorGv + '% de GV.';
-                resultado2.innerHTML += 'Tienes que echar ' + totalPg + 'ml de PG y ' + totalGv + 'ml de GV.'
+                resultado2.innerHTML += 'Tienes que echar ' + totalPg.toFixed(1) + 'ml de PG y ' + totalGv.toFixed(1) + 'ml de GV.'
 
             }else{
 
@@ -96,7 +96,7 @@
                 resultado.innerHTML = '';
                 resultado2.innerHTML = '';
                 resultado.innerHTML += 'Si quieres fabricar ' + resultCantBase +'ml de Base con '+ cantNicotina + 'mg de nicotina al ' + resultPorPg + '% de PG y ' + resultPorGv + '% de GV.';
-                resultado2.innerHTML += 'Tienes que echar ' + (totalPg - (totalNicotina/2)) + 'ml de PG y ' + (totalGv - (totalNicotina/2)) + 'ml de GV y ' + totalNicotina + 'ml de nicotina.';
+                resultado2.innerHTML += 'Tienes que echar ' + (totalPg - (totalNicotina/2)).toFixed(1) + 'ml de PG y ' + (totalGv - (totalNicotina/2)).toFixed(1) + 'ml de GV y ' + totalNicotina.toFixed(1) + 'ml de nicotina.';
 
 
                 console.log(totalNicotina+'ml');
