@@ -28,14 +28,12 @@
         var btnResultadoLiquido = document.getElementById('btnPorAroma');
         var btnResultadoBase = document.getElementById('btn-por-pg');
         var bntPorcentajes = document.getElementById('por-pg-gv');
-        var btnRepetir = document.getElementById('btn-reiniciar');
         
         
         btnResultadoLiquido.addEventListener('click', resultadoLiquido);
         btnResultadoBase.addEventListener('click', resultadoBase);
         bntPorcentajes.addEventListener('mousemove', porcentajes);
         bntPorcentajes.addEventListener('touchmove', porcentajes);
-        btnRepetir.addEventListener('click', repetir);
         
 
         pg.innerHTML = bntPorcentajes.value + '%';
@@ -127,15 +125,7 @@
 
         }
 
-        function repetir(){
-
-            concentracionNicotina.value = 0;
-            cantBase.value = 0;
-            porcentajeAroma.value = 0;
-            cantidadAroma.value = 0;
-            porPg.value = 50;
-
-        }
+        
     });
 
 })();
