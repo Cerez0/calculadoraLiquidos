@@ -89,14 +89,14 @@
                 resultado2.innerHTML = '';
                 resultado.innerHTML += 'Si quieres fabricar ' + resultCantBase +'ml de Base al ' + resultPorPg + '% de PG y ' + resultPorGv + '% de GV.';
                 resultado2.innerHTML += 'Tienes que echar ' + totalPg + 'ml de PG y ' + totalGv + 'ml de GV.'
-                
+
             }else{
 
                 let totalNicotina = (cantNicotina * resultCantBase/conNicotina);
                 resultado.innerHTML = '';
                 resultado2.innerHTML = '';
                 resultado.innerHTML += 'Si quieres fabricar ' + resultCantBase +'ml de Base con '+ cantNicotina + 'mg de nicotina al ' + resultPorPg + '% de PG y ' + resultPorGv + '% de GV.';
-                resultado2.innerHTML += 'Tienes que echar ' + totalPg + 'ml de PG y ' + totalGv + 'ml de GV y ' + totalNicotina + 'ml de nicotina ' + conNicotina;
+                resultado2.innerHTML += 'Tienes que echar ' + (totalPg - (totalNicotina/2)) + 'ml de PG y ' + (totalGv - (totalNicotina/2)) + 'ml de GV y ' + totalNicotina + 'ml de nicotina.';
 
 
                 console.log(totalNicotina+'ml');
